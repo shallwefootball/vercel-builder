@@ -255,7 +255,7 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
     [nuxtConfigName]: new FileFsRef({ fsPath: path.resolve(entrypointPath, nuxtConfigName) }),
     ...serverDistFiles,
     ...compiledTypescriptFiles,
-    ...nodeModules
+    // ...nodeModules
   }
 
   // Extra files to be included in lambda
