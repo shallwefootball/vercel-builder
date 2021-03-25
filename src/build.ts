@@ -270,6 +270,9 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
     if (/babel/.test(key)) {
       delete nodeModules[key]
     }
+    if (/lodash/.test(key)) {
+      delete nodeModules[key]
+    }
   }
 
   // fs.readdir(nodeModulesDir, (err, data) => {
