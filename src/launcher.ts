@@ -1,5 +1,7 @@
 import type { RequestListener } from 'http'
 
+console.log("call launcher!!!")
+
 const startTime = process.hrtime()
 
 let nuxtConfig
@@ -28,6 +30,8 @@ for (const { name, args } of loaders) {
 
 // Create nuxt
 const { Nuxt } = require('@nuxt/core__NUXT_SUFFIX__')
+
+console.log("call nuxt??????!!!", Nuxt)
 const nuxt = new Nuxt({
   _start: true,
   ...nuxtConfig
