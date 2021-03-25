@@ -234,15 +234,6 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   // node_modules_prod
   const nodeModulesDir = path.join(entrypointPath, 'node_modules_prod')
 
-
-
-  await fs.remove(path.join(entrypointPath, '@handsontable'))
-  await fs.remove(path.join(entrypointPath, '@apollo'))
-  await fs.remove(path.join(entrypointPath, '@apollographql'))
-  await fs.remove(path.join(entrypointPath, '@graphql-tools'))
-  await fs.remove(path.join(entrypointPath, '@graphql-typed-document-node'))
-  await fs.remove(path.join(entrypointPath, 'rsjx'))
-
   const nodeModules = await globAndPrefix('**', nodeModulesDir, 'node_modules')
 
   fs.readdir(nodeModulesDir, (err, data) => {
