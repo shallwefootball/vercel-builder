@@ -1,6 +1,6 @@
 {
   "name": "amos-vercel-builder",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": "nuxt/vercel-builder",
   "license": "MIT",
   "exports": {
