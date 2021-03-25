@@ -15,6 +15,7 @@ const loaders = [{ name: 'jiti', args: [] }, {
     }
   }]
 }]
+console.log('loaders?????', loaders)
 for (const { name, args } of loaders) {
   try {
     const load = require(name)(...args)
