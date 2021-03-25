@@ -273,6 +273,10 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
     if (/lodash/.test(key)) {
       delete nodeModules[key]
     }
+    if (/NextHealth/.test(key)) {
+      delete nodeModules[key]
+    }
+
   }
 
   // fs.readdir(nodeModulesDir, (err, data) => {
