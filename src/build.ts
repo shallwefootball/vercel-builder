@@ -249,8 +249,8 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
     'vercel__bridge.js': new FileFsRef({ fsPath: require('@vercel/node-bridge') }),
     [nuxtConfigName]: new FileFsRef({ fsPath: path.resolve(entrypointPath, nuxtConfigName) }),
     ...serverDistFiles,
-    ...compiledTypescriptFiles,
-    ...nodeModules
+    ...compiledTypescriptFiles
+    // ...nodeModules
   }
 
   // Extra files to be included in lambda
