@@ -237,10 +237,22 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   const nodeModules = await globAndPrefix('**', nodeModulesDir, 'node_modules')
 
   for (const key in nodeModules) {
-    if (/@hansontable/.test(key)) {
+    if (/hansontable/.test(key)) {
       delete nodeModules[key]
     }
-    if (/@apollo/.test(key)) {
+    if (/apollo/.test(key)) {
+      delete nodeModules[key]
+    }
+    if (/graphql/.test(key)) {
+      delete nodeModules[key]
+    }
+    if (/element-ui/.test(key)) {
+      delete nodeModules[key]
+    }
+    if (/moment/.test(key)) {
+      delete nodeModules[key]
+    }
+    if (/d3/.test(key)) {
       delete nodeModules[key]
     }
   }
