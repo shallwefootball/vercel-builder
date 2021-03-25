@@ -235,6 +235,8 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
   const nodeModulesDir = path.join(entrypointPath, 'node_modules_prod')
   const nodeModules = await globAndPrefix('**', nodeModulesDir, 'node_modules')
 
+  console.log('nodeModules', nodeModules)
+
   // Lambdas
   const lambdas: Record<string, Lambda> = {}
 
