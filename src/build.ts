@@ -236,9 +236,18 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
 
   const nodeModules = await globAndPrefix('**', nodeModulesDir, 'node_modules')
 
-  fs.readdir(nodeModulesDir, (err, data) => {
-    console.log('data', data.toString())
-  })
+  for (const key in nodeModules) {
+    if (/@hansontable/.test(key)) {
+      delete nodeModules[key]
+    }
+    if (/@apollo/.test(key)) {
+      delete nodeModules[key]
+    }
+  }
+
+  // fs.readdir(nodeModulesDir, (err, data) => {
+  //   console.log('data', data.toString())
+  // })
 
   // Lambdas
   const lambdas: Record<string, Lambda> = {}
@@ -255,7 +264,7 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
     [nuxtConfigName]: new FileFsRef({ fsPath: path.resolve(entrypointPath, nuxtConfigName) }),
     ...serverDistFiles,
     ...compiledTypescriptFiles,
-    // ...nodeModules
+    ...nodeModules
   }
 
   // Extra files to be included in lambda
