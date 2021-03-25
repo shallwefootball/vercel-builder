@@ -255,6 +255,18 @@ export async function build (opts: BuildOptions & { config: NuxtBuilderConfig })
     if (/d3/.test(key)) {
       delete nodeModules[key]
     }
+    if (/sentry/.test(key)) {
+      delete nodeModules[key]
+    }
+    if (/storybook/.test(key)) {
+      delete nodeModules[key]
+    }
+    if (/relay-compiler/.test(key)) {
+      delete nodeModules[key]
+    }
+    if (/react/.test(key)) {
+      delete nodeModules[key]
+    }
   }
 
   // fs.readdir(nodeModulesDir, (err, data) => {
